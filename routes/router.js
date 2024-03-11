@@ -12,6 +12,13 @@ const requireSignIn = jwtE({
   algorithms: ["HS256"],
 });
 
+router.get('/',(req, res) => {
+  return res.status(200).send({
+    success: true,
+    message: "Welcome to Home page"
+  })
+})
+
 // Insert user to the database with hashpassword
 router.post("/register", async (req, res) => {
   try {
